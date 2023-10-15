@@ -18,3 +18,7 @@ dict3 = {'value': 33}
 dict2 = dict3
 print('\nvalue of dict2: ', dict2)
 print('address of dict2: ', id(dict2))
+
+dict1 = dict2
+print('\nvalue of dict1: ', dict1)
+print('address of dict1: ', id(dict1))
