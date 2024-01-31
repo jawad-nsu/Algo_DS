@@ -28,42 +28,36 @@ class LinkedList:
         self.length += 1
         return True
     
-    def prepend(self, value):
-        new_node = Node(value)
-
-        if self.length == 0:
-            self.head = new_node
-            self.tail = new_node
-        else:
-            new_node.next = self.head
-            self.head = new_node
-
-        self.length += 1
-        return True
-
     def get(self, index):
         if(index < 0 or index >= self.length):
             return None
         temp = self.head     
         for _ in range(index):
                 temp = temp.next
-        return temp.value
+        return temp
+    
+    def set_value(self, index, value):
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
+
 
 # create linked list
 print('Create Linked List w 1 item')
 my_linked_list = LinkedList(4)
-my_linked_list.print_list()
 
 # append
-print('Append 1 item')
+print('Append 3 item')
 my_linked_list.append(5)
+my_linked_list.append(6)
+my_linked_list.append(7)
 my_linked_list.print_list()
 
-# prepend
-print('prepend 1 item')
-my_linked_list.prepend(3)
-my_linked_list.print_list()
 
-# get
-print('get item at index 2')
-print(my_linked_list.get(2))
+# set value
+print('set value at index 2')
+print(my_linked_list.set_value(2, 10))
+print('print list')
+my_linked_list.print_list()
