@@ -3,9 +3,9 @@ class Node:
         self.value = value
         self.next = None
         self.prev = None
+        
 
-
-class DoublelyLinkedList:
+class DoublyLinkedList:
     def __init__(self, value):
         new_node = Node(value)
         self.head = new_node
@@ -13,31 +13,48 @@ class DoublelyLinkedList:
         self.length = 1
 
     def print_list(self):
-        current = self.head
-        while current is not None:
-            print(current.value)
-            current = current.next
-
+        temp = self.head
+        while temp is not None:
+            print(temp.value)
+            temp = temp.next
+        
     def append(self, value):
         new_node = Node(value)
-        
-        if self.length < 1:
+        if self.head is None:
             self.head = new_node
             self.tail = new_node
-            new_node.next = self.tail
-            new_node.prev = self.head
-        else: 
+        else:
             self.tail.next = new_node
             new_node.prev = self.tail
             self.tail = new_node
-
         self.length += 1
         return True
-        
+  
 
-DLL = DoublelyLinkedList(1)
-DLL.append(2)
-DLL.append(3)
-DLL.append(4)
-DLL.append(5)
-DLL.print_list()
+
+
+my_doubly_linked_list = DoublyLinkedList(1)
+my_doubly_linked_list.append(2)
+
+
+print('Head:', my_doubly_linked_list.head.value)
+print('Tail:', my_doubly_linked_list.tail.value)
+print('Length:', my_doubly_linked_list.length, '\n')
+
+print('Doubly Linked List:')
+my_doubly_linked_list.print_list()
+
+
+
+"""
+    EXPECTED OUTPUT:
+    ----------------
+    Head: 1
+    Tail: 2
+    Length: 2 
+
+    Doubly Linked List:
+    1
+    2
+    
+"""
