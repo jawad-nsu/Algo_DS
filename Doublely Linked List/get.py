@@ -90,23 +90,16 @@ class DoublyLinkedList:
             return curr
         
 
+
 my_doubly_linked_list = DoublyLinkedList(1)
 my_doubly_linked_list.append(2)
 my_doubly_linked_list.append(3)
 my_doubly_linked_list.append(4)
-my_doubly_linked_list.append(5)
-my_doubly_linked_list.append(6)
-my_doubly_linked_list.append(7)
-my_doubly_linked_list.append(8)
 my_doubly_linked_list.print_list()
 print('get', my_doubly_linked_list.get(0).value)
 print('get', my_doubly_linked_list.get(1).value)
 print('get', my_doubly_linked_list.get(2).value)
 print('get', my_doubly_linked_list.get(3).value)
-print('get', my_doubly_linked_list.get(4).value)
-print('get', my_doubly_linked_list.get(5).value)
-print('get', my_doubly_linked_list.get(6).value)
-print('get', my_doubly_linked_list.get(7).value)
 
 """
     EXPECTED OUTPUT:
