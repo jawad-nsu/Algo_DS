@@ -28,7 +28,14 @@ class BST():
                     temp.right = Node(value)
                     return True
                 temp = temp.right
-        
-            
 
-            
+
+
+my_tree = BST()
+my_tree.insert(2)        
+my_tree.insert(1)        
+my_tree.insert(3)
+
+print(my_tree.root.value)        
+print(my_tree.root.left.value)        
+print(my_tree.root.right.value)
